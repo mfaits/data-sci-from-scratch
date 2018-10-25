@@ -43,5 +43,12 @@ total_connections = sum(number_of_friends(user)
 num_users = len(users) # length of the users list
 avg_connections = total_connections / num_users # 2.4
 
-print(users[3])
+#print(users[3])
+
+# create a list (user_id, number_of_friends)
+num_friends_by_id = [(user["id"], number_of_friends(user))
+for user in users]
+num_friends_by_id = sorted(num_friends_by_id, # get it sorted
+       key=lambda num_friends: num_friends[1], # by num_friends
+       reverse=True) #Had to edit lambda fxn from book, assign sorted list back to num_friends_by_id
 #%%
